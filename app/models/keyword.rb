@@ -9,7 +9,7 @@ class Keyword < ApplicationRecord
       config.access_token_secret = "SnsMgcgECBSiUG5C6kH7E10dKH4FQL0EDTbj4UzXPwH7n"
     end
     
-    client.search(self.word, result_type: "recent").take(10).collect do |tweet|
+    client.search(self.word, result_type: "recent").take(100).collect do |tweet|
       new_tweet = Tweet.new
       new_tweet.tweet_id= tweet.id.to_s
       new_tweet.tweet_created_at= tweet.created_at
@@ -21,6 +21,12 @@ class Keyword < ApplicationRecord
       new_tweet.keyword =self
       
       new_tweet.save
+    end
+  end
+  
+  def self.grab_all_tweets
+    Keyword.all.each do |keyword|
+      keyword.grab_tweets
     end
   end
 end

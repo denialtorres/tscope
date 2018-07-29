@@ -9,7 +9,7 @@
 <h2>Latest tweets (<%= @keyword.tweets.count%>)</h2>
 <ul>
   <% @keyword.tweets.each do |tweet| %>
-    <li><%= tweet.user_screen_name %>: <%= tweet.text %></li>
+    <li><img src="<%= tweet.user_image_url%>" width="30"><%= tweet.user_screen_name %>: <%= tweet.text %></li>
   <% end %>
 </ul>
 

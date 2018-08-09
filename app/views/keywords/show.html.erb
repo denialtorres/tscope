@@ -8,10 +8,13 @@
 
 <h2>Latest tweets (<%= @keyword.tweets.count%>)</h2>
 <ul>
-  <% @keyword.tweets.each do |tweet| %>
+  <% @tweets.each do |tweet| %>
     <li><img src="<%= tweet.user_image_url%>" width="30"><%= tweet.user_screen_name %>: <%= tweet.text %></li>
   <% end %>
 </ul>
 
+<div style="padding:20px;border:solid 1px #CCC"
+  <%= will_paginate @tweets %>
+</div>
 <%= link_to 'Edit', edit_keyword_path(@keyword) %> |
 <%= link_to 'Back', keywords_path %>

@@ -1,5 +1,6 @@
 class Keyword < ApplicationRecord
   has_many :tweets
+  mount_uploader :image, ImageUploader
   
   def grab_tweets    
 

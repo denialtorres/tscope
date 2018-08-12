@@ -43,6 +43,9 @@ gem "figaro"
 gem 'newrelic_rpm'
 gem 'foreman'
 gem 'will_paginate'
+gem 'carrierwave-aws'
+gem 'fog'
+gem "fog-aws"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

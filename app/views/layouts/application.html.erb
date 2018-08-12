@@ -5,17 +5,31 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
   </head>
 
   <body>
-    <h1>Tweetscope - v1</h1>
-    <hr/>
-    <%= yield %>
+    <nav class="navbar navbar-default" role="navigation" style="padding:10px">
+      <div class="navbar-left">
+        <h4 class="text-muted">Tweetscope</h4>
+      </div>
+      <div class="navbar-right">
+        <div style="float:right">
+          <ul class="nav nav-pills pull-right">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
     
-    <hr/>
-    <div style="text-align:center">
+    <div class="content">
+      <%= yield %>
+    </div>
+    
+    <div class="footer">
       Tweetscope for heroku course
     </div>
   </body>

@@ -48,6 +48,11 @@ GEM
     archive-zip (0.11.0)
       io-like (~> 0.3.0)
     arel (9.0.0)
+    asset_sync (2.4.0)
+      activemodel (>= 4.1.0)
+      fog-core
+      mime-types (>= 2.99)
+      unf
     autoprefixer-rails (9.1.0)
       execjs
     aws-eventstream (1.0.1)
@@ -447,6 +452,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  asset_sync
   bootsnap (>= 1.1.0)
   bootstrap-sass (~> 3.3.7)
   byebug
